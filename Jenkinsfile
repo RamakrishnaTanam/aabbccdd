@@ -1,23 +1,21 @@
-pipeline
-{
-agent any
-stages{
-stage('clone')
-steps{
-git 'https://github.com/RamakrishnaTanam/aabbccdd.git'
+pipeline {
+    agent any
+    stages {
+        stage('Clone') {
+            steps {
+                git 'https://github.com/RamakrishnaTanam/aabbccdd.git'
+            }
+        }
+        stage('Build') {
+            steps {
+                sh 'javac hello.java'
+            }
+        }
+        stage('Run') {
+            steps {
+                sh 'java hello'
+            }
+        }
+    }
 }
-}
-stage('build')
-{
-steps{
-sh 'javac hello.java'
-}
-}
-stage('run')
-{
-steps
-{
-sh 'java hello'
-}
-}
-}
+
