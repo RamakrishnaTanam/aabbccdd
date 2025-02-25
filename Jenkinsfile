@@ -3,7 +3,8 @@ pipeline {
     stages {
         stage('Clone') {
             steps {
-                git 'https://github.com/RamakrishnaTanam/aabbccdd.git'
+                git branch: 'main', url: 'https://github.com/RamakrishnaTanam/aabbccdd.git'
+
             }
         }
         stage('Build') {
